@@ -1,3 +1,5 @@
+import dedent from 'dedent';
+import colors from 'colors';
 import input from './input';
 
 const getInput = () => input.split('').map(Number);
