@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "dedent": "^0.7.0"
-  }
+  },
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "A collection of Advent of Code solutions",
+  "repository": "git@github.com:amorriscode/advent-of-code.git",
+  "author": "Anthony Morris <anthony@amorrissound.com>",
+  "license": "MIT",
+  "private": false
 }

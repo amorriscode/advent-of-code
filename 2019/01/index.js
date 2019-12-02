@@ -1,4 +1,3 @@
-import dedent from 'dedent';
 import input from './input';
 
 const getInput = () => input.split('\n').map(Number);
