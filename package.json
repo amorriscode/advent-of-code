@@ -8,5 +8,9 @@
   "repository": "git@github.com:amorriscode/advent-of-code.git",
   "author": "Anthony Morris <anthony@amorrissound.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "new": "cp -r ./$YEAR/_template ./$YEAR/$DAY",
+    "solve": "cd ./$YEAR && rollup -c ./rollup.config.js && node ./dist/main.js $DAY"
+  }
 }

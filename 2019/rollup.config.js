@@ -1,7 +1,7 @@
 module.exports = {
     input: 'main.js',
     output: {
-      file: 'solutions.js',
+      file: 'dist/main.js',
       format: 'cjs'
     }
 };

@@ -5,8 +5,8 @@ import dayOne from './01/index';
 import dayTwo from './02/index';
 
 const solutions = {
-    1: dayOne,
-    2: dayTwo,
+    '01': dayOne,
+    '02': dayTwo,
 }
 
 const dayToSolve = process.argv[2];
