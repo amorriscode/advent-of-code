@@ -40,7 +40,7 @@ const part2 = () => {
             if (run(input) === expected) {
                 return dedent`
                     ${expected} was found with noun ${noun} and verb ${verb}.
-                    The solution to the correct solution is ${100 * noun + verb}.
+                    The correct solution is ${100 * noun + verb}.
                 `;
             }
         }
