@@ -1,9 +1,9 @@
-const fs = require('fs');
+import dedent from 'dedent';
+import input from './input';
 
-const input = fs.readFileSync(`${__dirname}/input.txt`, 'utf8');
 const getInput = () => input.split(',').map(Number);
 
-const part1 = program => {
+const run = program => {
     let position = 0;
     while (program[position] !== 99) {
         const opCode = program[position];
@@ -19,22 +19,35 @@ const part1 = program => {
     }
 
     return program[0];
+};
+
+const part1 = () => {
+    const input = getInput();
+    input[1] = 12;
+    input[2] = 2;
+    return `The gravity assist program halted with ${run(input)}.`;
 }
 
 const part2 = () => {
     const expected = 19690720;
+
     for (let noun = 0; noun <= 99; noun++) {
         for (let verb = 0; verb <= 99; verb++) {
             const input = getInput();
             input[1] = noun;
             input[2] = verb;
-            if (part1(input) === expected) {
-                return 100 * noun + verb;
+
+            if (run(input) === expected) {
+                return dedent`
+                    ${expected} was found with noun ${noun} and verb ${verb}.
+                    The solution to the correct solution is ${100 * noun + verb}.
+                `;
             }
         }
     }
-}
- 
-const result = part2();
+};
 
-console.log(`The state of the program is ${result}.`);
+export default {
+    part1,
+    part2,
+}
