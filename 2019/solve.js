@@ -9,10 +9,10 @@ export default (solutions) => {
 
     console.log('');
 
-    console.log('The solution to part one is...'.bold.green);
+    console.log('🎄🎄 PART ONE 🎄🎄'.bold.green);
     console.log(`${solutions.part1()}\n`);
     
-    console.log('The solution to part two is...'.bold.green);
+    console.log('🎄🎄 PART TWO 🎄🎄'.bold.green);
     console.log(solutions.part2());
 
     console.log('');
