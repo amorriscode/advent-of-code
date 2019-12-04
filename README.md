@@ -23,3 +23,7 @@ YEAR=20XX DAY=0X yarn new
 ```bash
 YEAR=20XX DAY=0X yarn solve
 ```
+
+## 2019
+
+This year they decided to include [poetry](https://www.reddit.com/r/adventofcode/wiki/poems4progs) so I'll add a `poem.txt` for each challenge.
