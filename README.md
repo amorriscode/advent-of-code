@@ -2,8 +2,6 @@
 
 This repo contains my solutions for the Advent of Code.
 
-I have never successfully complete the challenge... perhaps 2019 is my year?
-
 ## Setup
 
 You know the drill...
