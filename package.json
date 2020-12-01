@@ -11,10 +11,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "new": "cp -r ./$YEAR/_template ./$YEAR/$DAY",
-    "solve": "cd ./$YEAR && rollup -c ./rollup.config.js && node ./dist/main.js $DAY"
+    "new": "cp -r ./_template ./$YEAR/$DAY",
+    "solve": "rollup -c ./rollup.config.js && node ./dist/main.js $YEAR $DAY"
   },
   "devDependencies": {
+    "@rollup/plugin-dynamic-import-vars": "^1.1.1",
     "rollup": "^1.27.8"
   }
 }

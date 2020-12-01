@@ -1,6 +1,6 @@
 import colors from 'colors'
 
-export default (solutions) => {
+export default async (solutions) => {
   console.log('                                       '.bgRed)
 
   console.log('          ADVENT OF CODE 2020          '.bold.brightRed.bgGreen)
@@ -10,10 +10,10 @@ export default (solutions) => {
   console.log('')
 
   console.log('🎄🎄 PART ONE 🎄🎄'.bold.green)
-  console.log(`${solutions.part1()}\n`)
+  console.log(`${await solutions.part1()}\n`)
 
   console.log('🎄🎄 PART TWO 🎄🎄'.bold.green)
-  console.log(solutions.part2())
+  console.log(await solutions.part2())
 
   console.log('')
 
