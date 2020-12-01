@@ -1,14 +1,18 @@
-# [Advent of Code](https://adventofcode.com/)
+# [Advent of Code](https://adventofcode.com/) 🎄
 
 This repo contains my solutions for the Advent of Code.
 
 ## Setup
 
-You know the drill...
+1. [Generate a repo from this template](https://github.com/amorriscode/advent-of-code/generate)
 
-```bash
-yarn
-```
+2. Install dependencies
+
+    ```bash
+    yarn
+    ```
+
+3. Bask in the holiday cheer 🎅
 
 ## Generate a new solution from a template
 
