@@ -1,6 +1,10 @@
 import colors from 'colors'
 
-export default async (solutions) => {
+export default async (solutionsPromise) => {
+  // @TODO: Fix this jank
+  const resolvedSolutions = await solutionsPromise
+  const solutions = resolvedSolutions.default
+
   console.log('                                       '.bgRed)
 
   console.log('          ADVENT OF CODE 2020          '.bold.brightRed.bgGreen)

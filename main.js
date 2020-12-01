@@ -19,7 +19,7 @@ try {
   console.log(`Failed to read days from ${year}: ${err}`)
 }
 
-days.forEach((day) => {
+days.forEach(async (day) => {
   solutions[day] = import(`./${year}/${day}/index.js`)
 })
 
