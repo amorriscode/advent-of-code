@@ -21,3 +21,5 @@ YEAR=20XX DAY=0X yarn new
 ```bash
 YEAR=20XX DAY=0X yarn solve
 ```
+
+![Sample output](https://user-images.githubusercontent.com/16005567/100702881-566baa80-3357-11eb-9500-dfab877c824f.png)
