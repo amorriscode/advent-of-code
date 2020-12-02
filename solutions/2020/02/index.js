@@ -36,11 +36,7 @@ const countLetters = ({ min, max, letter, password }) => {
 const validatePositions = ({ min, max, letter, password }) => {
   let validCount = 0
 
-  const firstPosition =
-    password[min - 1] === letter && password[max - 1] !== letter
-  const secondPosition =
-    password[min - 1] !== letter && password[max - 1] === letter
-  if (firstPosition || secondPosition) {
+  if ((password[min - 1] === letter) ^ (password[max - 1] === letter)) {
     validCount++
   }
 
