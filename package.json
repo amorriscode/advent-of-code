@@ -7,12 +7,12 @@
   "version": "1.0.0",
   "description": "A collection of Advent of Code solutions",
   "repository": "git@github.com:amorriscode/advent-of-code.git",
-  "author": "Anthony Morris <anthony@amorrissound.com>",
+  "author": "Anthony Morris <amorriscode@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "new": "cp -r ./_template ./$YEAR/$DAY",
-    "solve": "rollup -c ./rollup.config.js && node ./dist/main.js $YEAR $DAY"
+    "new": "mkdir -p ./solutions/$YEAR/$DAY && cp -r ./_template ./solutions/$YEAR/$DAY",
+    "solve": "rollup -c ./rollup.config.js --silent && node ./dist/main.js $YEAR $DAY"
   },
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^1.1.1",

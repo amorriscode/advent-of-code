@@ -8,7 +8,7 @@ const days = []
 const solutions = {}
 
 try {
-  const files = fs.readdirSync(`./${year}`)
+  const files = fs.readdirSync(`./solutions/${year}`)
 
   files.forEach((file) => {
     if (file !== '_template') {
@@ -20,7 +20,7 @@ try {
 }
 
 days.forEach(async (day) => {
-  solutions[day] = import(`./${year}/${day}/index.js`)
+  solutions[day] = import(`./solutions/${year}/${day}/index.js`)
 })
 
 solve(solutions[dayToSolve])
