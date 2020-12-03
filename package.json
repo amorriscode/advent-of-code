@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "new": "mkdir -p ./solutions/$YEAR/$DAY && cp -r ./_template ./solutions/$YEAR/$DAY",
+    "new": "mkdir -p ./solutions/$YEAR/$DAY && cp -r ./_template/ ./solutions/$YEAR/$DAY/",
     "solve": "rollup -c ./rollup.config.js --silent && node ./dist/main.js $YEAR $DAY"
   },
   "devDependencies": {
