@@ -11,9 +11,7 @@ try {
   const files = fs.readdirSync(`./solutions/${year}`)
 
   files.forEach((file) => {
-    if (file !== '_template') {
-      days.push(file)
-    }
+    days.push(file)
   })
 } catch (err) {
   console.log(`Failed to read days from ${year}: ${err}`)
