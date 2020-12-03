@@ -3,18 +3,13 @@ import input from './input'
 const getInput = () => input.split('\n').map((row) => row.split(''))
 
 const treeCounter = (map, slopeX, slopeY) => {
-  const pos = [0, 0]
+  let x = 0
   let trees = 0
 
-  for (let i = 0; i < map.length; i++) {
-    pos[0] = (pos[0] + slopeX) % map[0].length
-    pos[1] += slopeY
+  for (let y = slopeY; y < map.length; y += slopeY) {
+    x = (x + slopeX) % map[0].length
 
-    if (pos[1] >= map.length) {
-      break
-    }
-
-    if (map[pos[1]][pos[0]] === '#') {
+    if (map[y][x] === '#') {
       trees++
     }
   }
