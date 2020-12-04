@@ -26,12 +26,12 @@ const validatePassports = (passports, withValidator = false) => {
   let validPassports = 0
 
   for (let i = 0; i < passports.length; i++) {
-    const pFields = {}
+    const passportFields = {}
     const passport = passports[i].replace(/\n/g, ' ').split(' ')
 
     for (const unparsedField of passport) {
       const [field, data] = unparsedField.split(':')
-      pFields[field] = data
+      passportFields[field] = data
     }
 
     let hasAllFields = true
@@ -40,7 +40,10 @@ const validatePassports = (passports, withValidator = false) => {
       if (field !== 'cid') {
         const hasField = passports[i].split(field).length - 1
 
-        if (hasField !== 1 || (withValidator && !validator(pFields[field]))) {
+        if (
+          hasField !== 1 ||
+          (withValidator && !validator(passportFields[field]))
+        ) {
           hasAllFields = false
         }
       }
