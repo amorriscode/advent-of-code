@@ -23,9 +23,9 @@ const binarySearch = (seats, separator, startMin, startMax) => {
 }
 
 const getSeatIds = (seats) => {
-  let maxSeatId = -Infinity
   const seatIds = []
-  let mySeat = 0
+  let maxSeatId = -Infinity
+  let mySeatId = 0
 
   for (let i = 0; i < seats.length; i++) {
     const seat = seats[i]
@@ -42,16 +42,13 @@ const getSeatIds = (seats) => {
 
   seatIds.sort((a, b) => a - b)
 
-  for (let i = 1; i < seatIds.length - 1; i++) {
-    if (
-      seatIds[i - 1] !== seatIds[i] - 1 &&
-      seatIds[i + 1] === seatIds[i] + 1
-    ) {
-      mySeat = seatIds[i - 1] + 1
+  for (let i = 1; i < seatIds.length; i++) {
+    if (seatIds[i - 1] !== seatIds[i] - 1) {
+      mySeatId = seatIds[i - 1] + 1
     }
   }
 
-  return [maxSeatId, mySeat]
+  return [maxSeatId, mySeatId]
 }
 
 const part1 = () => {
