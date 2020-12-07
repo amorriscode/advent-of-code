@@ -6,20 +6,20 @@ const parseRules = (rules) => {
   const parsedRules = {}
 
   for (let i = 0; i < rules.length; i++) {
-    const [rawParent, rawChildren] = rules[i].split('contain')
+    const [rawParent, children] = rules[i].split('contain')
     const parent = rawParent.match(/^(.*?)bags/)[1].trim()
-    const children = rawChildren.split(',').map((rawChild) => {
-      const child = rawChild.match(/(\d)(.*?)bag/)
-      const count = child ? parseInt(child[1].trim()) : 0
-      const bag = child ? child[2].trim() : 'no other'
-      return [count, bag]
-    })
 
     parsedRules[parent] = {}
 
-    for (const [count, bag] of children) {
-      parsedRules[parent][bag] = count
-    }
+    children.split(',').forEach((rawChild) => {
+      const child = rawChild.match(/(\d)(.*?)bag/)
+
+      if (child) {
+        const bag = child[2].trim()
+        const count = parseInt(child[1].trim())
+        parsedRules[parent][bag] = count
+      }
+    })
   }
 
   return parsedRules
@@ -27,14 +27,14 @@ const parseRules = (rules) => {
 
 const getColorsContainingGold = (rules) => {
   const uniqueBags = new Set()
-  const queue = ['shiny gold']
+  const stack = ['shiny gold']
 
-  while (queue.length) {
-    const currBag = queue.shift()
+  while (stack.length) {
+    const currBag = stack.pop()
 
-    for (const bag of Object.keys(rules)) {
-      if (rules[bag][currBag]) {
-        queue.push(bag)
+    for (const [bag, bagRules] of Object.entries(rules)) {
+      if (bagRules[currBag]) {
+        stack.push(bag)
         uniqueBags.add(bag)
       }
     }
@@ -44,19 +44,17 @@ const getColorsContainingGold = (rules) => {
 }
 
 const countTotalBags = (rules) => {
-  const getCountFor = (bag) => {
+  const getBagCount = (bag) => {
     let totalCount = 0
 
     for (const [child, count] of Object.entries(rules[bag])) {
-      if (child !== 'no other') {
-        totalCount += count + getCountFor(child) * count
-      }
+      totalCount += count + getBagCount(child) * count
     }
 
     return totalCount
   }
 
-  return getCountFor('shiny gold')
+  return getBagCount('shiny gold')
 }
 
 const part1 = () => {
