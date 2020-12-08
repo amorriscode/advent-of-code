@@ -6,12 +6,12 @@ const getInput = () =>
     return [op, parseInt(value)]
   })
 
-const executeProgram = (instructions, noLoops = false) => {
+const executeProgram = (instructions, returnOnExecuted = false) => {
   let acc = 0
   let pos = 0
   const executed = new Set()
 
-  while (noLoops || !executed.has(pos)) {
+  while (returnOnExecuted || !executed.has(pos)) {
     executed.add(pos)
 
     const [op, value] = instructions[pos]
@@ -30,8 +30,8 @@ const executeProgram = (instructions, noLoops = false) => {
     }
 
     if (
-      (noLoops && executed.has(pos)) ||
-      (!noLoops && pos >= instructions.length)
+      (returnOnExecuted && executed.has(pos)) ||
+      (!returnOnExecuted && pos >= instructions.length)
     ) {
       return acc
     }
