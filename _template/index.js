@@ -1,8 +1,8 @@
 import input from './input'
 
-const getInput = () => input.split('').map(Number)
+const getInput = () => input.split('\n')
 
-const run = () => {}
+const run = (input) => {}
 
 const part1 = () => {
   const input = getInput()
