@@ -24,21 +24,21 @@ const countDifferences = (input) => {
 }
 
 const countDistinct = (input) => {
-  const routes = {}
+  const adapterChains = {}
 
-  routes[input[input.length - 1]] = 1
+  adapterChains[input[input.length - 1]] = 1
 
   for (let i = input.length - 2; i >= 0; i--) {
-    routes[input[i]] = 0
+    adapterChains[input[i]] = 0
 
     for (let j = i + 1; j < input.length && j <= i + 3; j++) {
       if (input[j] - input[i] <= 3) {
-        routes[input[i]] += routes[input[j]]
+        adapterChains[input[i]] += adapterChains[input[j]]
       }
     }
   }
 
-  return routes[0]
+  return adapterChains[0]
 }
 
 const part1 = () => {
