@@ -2,7 +2,7 @@ import input from './input'
 
 const getInput = () => input.split('\n').map((n) => n.split(''))
 
-const getAdjacentSeatsSimple = (seats, i, j) => {
+const getAdjacentOccupiedSeats = (seats, i, j) => {
   let adjacent = []
 
   if (i !== 0) {
@@ -34,16 +34,52 @@ const getAdjacentSeatsSimple = (seats, i, j) => {
     adjacent.push(seats[i][j + 1])
   }
 
-  return adjacent.filter(Boolean)
+  return adjacent
+    .filter(Boolean)
+    .reduce((acc, curr) => (curr === '#' ? acc + 1 : acc), 0)
 }
 
-const getAdjacentSeatsAdvanced = (seats, i, j) => {
-  // Lost my code for part two, too lazy to write it again :(
-  // Gotta go play Cyberpunk 2077
-  // (the solution was disgusting anywas...)
+const getNonAdjacentOccupiedSeats = (seats, i, j) => {
+  let adjacent = []
+
+  const directions = [
+    { x: 1, y: 0 },
+    { x: -1, y: 0 },
+    { x: 1, y: 1 },
+    { x: -1, y: -1 },
+    { x: 1, y: -1 },
+    { x: -1, y: 1 },
+    { x: 0, y: 1 },
+    { x: 0, y: -1 },
+  ]
+
+  directions.forEach(({ x, y }) => {
+    let row = i + y
+    let col = j + x
+
+    while (
+      row >= 0 &&
+      row < seats.length &&
+      col >= 0 &&
+      col < seats[0].length
+    ) {
+      const seat = seats[row][col]
+      if (seat !== '.') {
+        adjacent.push(seats[row][col])
+        break
+      }
+
+      row += y
+      col += x
+    }
+  })
+
+  return adjacent
+    .filter(Boolean)
+    .reduce((acc, curr) => (curr === '#' ? acc + 1 : acc), 0)
 }
 
-const getOccupiedSeats = (input) => {
+const getOccupiedSeats = (input, adjacent = true) => {
   let seatChanged = true
   let seats = input.slice()
 
@@ -56,16 +92,13 @@ const getOccupiedSeats = (input) => {
 
     for (let i = 0; i < seats.length; i++) {
       for (let j = 0; j < seats[0].length; j++) {
-        const adjacent = getAdjacentSeatsSimple(seats, i, j)
+        const occupiedSeats = adjacent
+          ? getAdjacentOccupiedSeats(seats, i, j)
+          : getNonAdjacentOccupiedSeats(seats, i, j)
 
-        const adjacentOccupied = adjacent.reduce(
-          (acc, curr) => (curr === '#' ? acc + 1 : acc),
-          0
-        )
-
-        if (seats[i][j] === 'L' && adjacentOccupied === 0) {
+        if (seats[i][j] === 'L' && occupiedSeats === 0) {
           newSeats[i][j] = '#'
-        } else if (seats[i][j] === '#' && adjacentOccupied >= 4) {
+        } else if (seats[i][j] === '#' && occupiedSeats >= 5) {
           newSeats[i][j] = 'L'
         } else {
           newSeats[i][j] = seats[i][j]
@@ -94,8 +127,8 @@ const part1 = () => {
 }
 
 const part2 = () => {
-  const input = getInput()
-  // run(input)
+  const seats = getInput()
+  return `There are ${getOccupiedSeats(seats, false)} occupied seats.`
 }
 
 export default {
