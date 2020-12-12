@@ -70,17 +70,13 @@ const sailWithWaypoint = (instructions) => {
         break
       case 'R':
         while (value > 0) {
-          const tmp = waypoint[1]
-          waypoint[1] = -waypoint[0]
-          waypoint[0] = tmp
+          ;[waypoint[0], waypoint[1]] = [waypoint[1], -waypoint[0]]
           value -= 90
         }
         break
       case 'L':
         while (value > 0) {
-          const tmp = waypoint[1]
-          waypoint[1] = waypoint[0]
-          waypoint[0] = -tmp
+          ;[waypoint[0], waypoint[1]] = [-waypoint[1], waypoint[0]]
           value -= 90
         }
         break
