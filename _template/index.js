@@ -6,12 +6,12 @@ const run = (input) => {}
 
 const part1 = () => {
   const input = getInput()
-  run(input)
+  return run(input)
 }
 
 const part2 = () => {
   const input = getInput()
-  run(input)
+  // return run(input)
 }
 
 export default {
