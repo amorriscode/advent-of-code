@@ -1,6 +1,6 @@
 import input from './input'
 
-const getInput = () => input.split(',')
+const data = input.split(',')
 
 const run = (input, n) => {
   let prev = input[input.length - 1]
@@ -18,13 +18,11 @@ const run = (input, n) => {
 }
 
 const part1 = () => {
-  const input = getInput()
-  return `The 2020th number spoken was ${run(input, 2020)}`
+  return `The 2020th number spoken was ${run(data, 2020)}`
 }
 
 const part2 = () => {
-  const input = getInput()
-  return `The 30000000th number spoken was ${run(input, 30000000)}`
+  return `The 30000000th number spoken was ${run(data, 30000000)}`
 }
 
 export default {

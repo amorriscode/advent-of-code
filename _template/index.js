@@ -1,17 +1,15 @@
 import input from './input'
 
-const getInput = () => input.split('\n')
+const data = input.split('\n')
 
 const run = (input) => {}
 
 const part1 = () => {
-  const input = getInput()
-  return run(input)
+  return run(data)
 }
 
 const part2 = () => {
-  const input = getInput()
-  // return run(input)
+  // return run(data)
 }
 
 export default {
