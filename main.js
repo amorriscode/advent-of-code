@@ -21,4 +21,4 @@ days.forEach(async (day) => {
   solutions[day] = import(`./solutions/${year}/${day}/index.js`)
 })
 
-solve(solutions[dayToSolve])
+solve(year, dayToSolve, solutions[dayToSolve])
