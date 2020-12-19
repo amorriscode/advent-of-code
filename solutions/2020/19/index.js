@@ -34,12 +34,14 @@ const parseRegex = (rules) => {
 
 const part1 = () => {
   const [rules, messages] = parseInput()
-  return messages.filter((message) => message.match(parseRegex(rules))).length
+  const regEx = parseRegex(rules)
+  return messages.filter((message) => message.match(regEx)).length
 }
 
 const part2 = () => {
   const [rules, messages] = parseInput(true)
-  return messages.filter((message) => message.match(parseRegex(rules))).length
+  const regEx = parseRegex(rules)
+  return messages.filter((message) => message.match(regEx)).length
 }
 
 export default {
