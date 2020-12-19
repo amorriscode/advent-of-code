@@ -2,8 +2,8 @@ import input from './input'
 
 const data = input.split('\n\n')
 
-const parseInput = (part2 = false) => {
-  let [rules, messages] = data
+const parseInput = (input, part2 = false) => {
+  let [rules, messages] = input
 
   if (part2) {
     rules = rules
@@ -32,14 +32,14 @@ const parseRegex = (rules) => {
   return new RegExp(`^${pattern}$`)
 }
 
-const part1 = () => {
-  const [rules, messages] = parseInput()
+export const part1 = (input = data) => {
+  const [rules, messages] = parseInput(input)
   const regEx = parseRegex(rules)
   return messages.filter((message) => message.match(regEx)).length
 }
 
-const part2 = () => {
-  const [rules, messages] = parseInput(true)
+export const part2 = (input = data) => {
+  const [rules, messages] = parseInput(input, true)
   const regEx = parseRegex(rules)
   return messages.filter((message) => message.match(regEx)).length
 }

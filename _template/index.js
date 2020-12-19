@@ -4,12 +4,12 @@ const data = input.split('\n')
 
 const run = (input) => {}
 
-const part1 = () => {
+export const part1 = (input = data) => {
   return run(data)
 }
 
-const part2 = () => {
-  // return run(data)
+export const part2 = (input = data) => {
+  return run(data)
 }
 
 export default {
