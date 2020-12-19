@@ -1,6 +1,6 @@
 # [Advent of Code](https://adventofcode.com/) 🎄
 
-This repo contains my solutions for the Advent of Code.
+This repo is used to help maintain my [JavaScript solutions](https://github.com/amorriscode/advent-of-code-solutions) for Advent of Code.
 
 ## Setup
 
@@ -18,6 +18,12 @@ This repo contains my solutions for the Advent of Code.
 
 ```bash
 YEAR=20XX DAY=0X yarn new
+```
+
+## Run tests while you're solve the problem
+
+```bash
+YEAR=20XX DAY=0X yarn test --watch
 ```
 
 ## Display the output for a solution
