@@ -1,15 +1,17 @@
 import input from './input'
 
-const data = input.split('\n')
+export const inputParser = (input) => input.split('\n')
+
+const data = inputParser(input)
 
 const run = (input) => {}
 
 export const part1 = (input = data) => {
-  return run(data)
+  return
 }
 
 export const part2 = (input = data) => {
-  return run(data)
+  return
 }
 
 export default {
