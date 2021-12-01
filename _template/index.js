@@ -1,16 +1,14 @@
-import input from './input'
+import { example, data } from './input'
 
 export const inputParser = (input) => input.split('\n')
 
-const data = inputParser(input)
+const parsedData = inputParser(input)
 
-const run = (input) => {}
-
-export const part1 = (input = data) => {
+export const part1 = (input = parsedData) => {
   return
 }
 
-export const part2 = (input = data) => {
+export const part2 = (input = parsedData) => {
   return
 }
 

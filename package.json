@@ -1,11 +1,10 @@
 {
   "dependencies": {
-    "colors": "^1.4.0",
-    "dedent": "^0.7.0"
+    "colors": "^1.4.0"
   },
   "name": "advent-of-code",
-  "version": "1.0.0",
-  "description": "A collection of Advent of Code solutions",
+  "version": "1.1.0",
+  "description": "A template for solving of Advent of Code in JavaScript",
   "repository": "git@github.com:amorriscode/advent-of-code.git",
   "author": "Anthony Morris <amorriscode@gmail.com>",
   "license": "MIT",
