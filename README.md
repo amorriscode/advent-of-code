@@ -20,6 +20,12 @@ This repo is used to help maintain my [JavaScript solutions](https://github.com/
 YEAR=20XX DAY=0X yarn new
 ```
 
+## Copy your inputs
+
+Inside the `/inputs` directory, you'll see have an `input.txt` and `example.txt` for each day you are solving. The `input.txt` is your unique Advent of Code input. The `example.txt` is for the example input given in the text of the question.
+
+In the future, `input.txt` will be automatically downloaded for you.
+
 ## Run tests while you're solve the problem
 
 ```bash

@@ -1,4 +1,6 @@
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
+import injectProcessEnv from 'rollup-plugin-inject-process-env'
+import path from 'path'
 
 module.exports = {
   input: 'main.js',
@@ -7,8 +9,9 @@ module.exports = {
     format: 'cjs',
   },
   plugins: [
-    dynamicImportVars({
-      // options
+    dynamicImportVars({}),
+    injectProcessEnv({
+      NODE_PATH: path.resolve(__dirname),
     }),
   ],
 }

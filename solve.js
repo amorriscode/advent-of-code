@@ -1,9 +1,9 @@
 import colors from 'colors'
 
-export default async (year, day, solutionsPromise) => {
+export default async (year, day, solutionsPromise, inputsPromise) => {
   // @TODO: Fix this jank
-  const resolvedSolutions = await solutionsPromise
-  const solutions = resolvedSolutions.default
+  const { part1, part2 } = await solutionsPromise
+  const { getInput } = await inputsPromise
 
   console.log('                                       '.bgRed)
 
@@ -16,10 +16,10 @@ export default async (year, day, solutionsPromise) => {
   console.log('')
 
   console.log(`🎄🎄 DAY ${day} PART ONE 🎄🎄`.bold.green)
-  console.log(`${await solutions.part1()}\n`)
+  console.log(`${await part1(getInput())}\n`)
 
   console.log(`🎄🎄 DAY ${day} PART TWO 🎄🎄`.bold.green)
-  console.log(await solutions.part2())
+  console.log(await part2(getInput()))
 
   console.log('')
 

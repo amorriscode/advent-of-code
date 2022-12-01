@@ -1,1 +1,1 @@
-# Day _______
+# Advent of Code {{YEAR}} Day {{DAY}}

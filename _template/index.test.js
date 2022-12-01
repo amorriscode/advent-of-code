@@ -1,18 +1,18 @@
-const { inputParser, part1, part2 } = require('./index.js')
-const { example, data } = require('./input.js')
+const { parseInput, part1, part2 } = require('./index.js')
+const { getExampleInput, getInput } = require('./input.js')
 
-test('part 1 example', () => {
-  expect(part1(inputParser(example))).toBe(0)
+test('part 1 example', async () => {
+  expect(part1(parseInput(await getExampleInput()))).toBe(0)
 })
 
-test('part 1 data', () => {
-  expect(part1(inputParser(data))).toBe(0)
+test('part 1 data', async () => {
+  expect(part1(parseInput(await getInput()))).toBe(0)
 })
 
-test('part 2 example', () => {
-  expect(part2(inputParser(example))).toBe(0)
+test('part 2 example', async () => {
+  expect(part2(parseInput(await getExampleInput()))).toBe(0)
 })
 
-test('part 2 data', () => {
-  expect(part2(inputParser(data))).toBe(0)
+test('part 2 data', async () => {
+  expect(part2(parseInput(await getInput()))).toBe(0)
 })
