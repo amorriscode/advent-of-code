@@ -16,10 +16,10 @@ export default async (year, day, solutionsPromise, inputsPromise) => {
   console.log('')
 
   console.log(`🎄🎄 DAY ${day} PART ONE 🎄🎄`.bold.green)
-  console.log(`${await part1(getInput())}\n`)
+  console.log(`${await part1(parseInput(await getInput()))}\n`)
 
   console.log(`🎄🎄 DAY ${day} PART TWO 🎄🎄`.bold.green)
-  console.log(await part2(getInput()))
+  console.log(await part2(parseInput(await getInput())))
 
   console.log('')
 
