@@ -24,7 +24,9 @@ YEAR=20XX DAY=0X yarn new
 
 Inside the `/inputs` directory, you'll see have an `input.txt` and `example.txt` for each day you are solving. The `input.txt` is your unique Advent of Code input. The `example.txt` is for the example input given in the text of the question.
 
-In the future, `input.txt` will be automatically downloaded for you.
+### Automatically downloading your input
+
+If you want to have your input automatically downloaded from the Advent of Code API, simply add a `.env` file at the root of your project with your Advent of Code session ID. This is the cookie that is set on your browser when you log in to the website.
 
 ## Run tests while you're solve the problem
 
